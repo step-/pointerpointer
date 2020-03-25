@@ -1,0 +1,336 @@
+# PointerPointer - Configurator and launcher GUI for find-cursor
+# Copyright (C) 2020 step
+# This file is distributed under the same license as the pointerpointer package.
+# step https:/github.com/step-/pointerpointer
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-25 21:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid ""
+"Draw concentric circles around the mouse pointer. Circles grow from the "
+"pointer hotspot outwards or shrink from the maximum <i>Diameter</i> inwards. "
+"<i>Gap</i> is the distance between consecutive circles (a negative gap makes "
+"circles shrink)."
+msgstr ""
+
+msgid ""
+"Enter special options into this field as follows:\n"
+"<tt><b>-t</b></tt>\\tIn case of circle transparency issues entering -t might "
+"help depending on the window manager in use."
+msgstr ""
+
+msgid ""
+"<b>Application</b>\n"
+"To load an existing single preset select its name in the pulldown and press "
+"<u>Load</u>.  This will fill the form with the preset's values, which you "
+"may further edit. Press <u>Test</u> to see your changes.\n"
+"To save your changes enter a new name in the <u>Load</u> pulldown then press "
+"<u>Save</u>. There is no warning for overwriting an existing preset.\n"
+"The name must not include the characters <span bgcolor=\"yellow\" fgcolor="
+"\"black\"> ; $ | = \" ` (back-quote) </span>.\n"
+"A <i>group name</i> is also possible. It is a list of <b>existing</b> "
+"presets separated by semicolons, i.e., group <big><i>A;B;C</i></big> "
+"comprises the three presets named <big><i>A</i></big>, <big><i>B</i></big>, "
+"and <big><i>C</i></big>. A group name may also express timing constraints "
+"(see the <i>Notes</i> section)."
+msgstr ""
+
+msgid ""
+"<b>Notes</b>\n"
+"Loading a group only loads its first member's values onto the edit form.\n"
+"\n"
+"While <u>Test</u> starts a pointer tracker based on the current form values, "
+"<u>Run</u> starts the pointer trackers named in the <u>Load</u> pulldown. "
+"For the preceding example, pressing <u>Run</u> will start three preset "
+"trackers respectively named <i>A</i>, <i>B</i> and <i>C</i>.\n"
+"\n"
+"To add an initial delay before a grouped preset, enter without spaces "
+"'w=' (unquoted) followed by the numeric delay and an optional time unit "
+"supported by the <tt>sleep</tt> command. For instance, running a group named "
+"<i>A;w=0.5s;B</i> will start <i>A</i>, wait half a second, then start <i>B</"
+"i>. A trailing 'w=' is not supported.  Rudimental looping is supported: end "
+"the preset group name with ';b=' to make the preset group repeat forever. "
+"You can stop runaway loops with the [Stop] button or the command-line line "
+"<tt>--stop</tt> option.\n"
+"\n"
+"The first outgrowing circle is drawn at <i>Gap</i> pixels from the center. "
+"If you want to reach inside that circle start drawing from the maximum "
+"diameter with a negative <i>Gap</i>.\n"
+"\n"
+"<i>Gap</i> is the distance between the middle circles of two consecutive "
+"annuli (rings) so it is unaffected by the <i>Pen width</i>."
+msgstr ""
+
+msgid ""
+"For the duration of an animation in seconds we have:\n"
+"<span bgcolor=\"white\" fgcolor=\"black\"><tt>Duration = Diameter/|Gap| * "
+"Period / 10,000</tt></span>\n"
+"hence:\n"
+"<span bgcolor=\"white\" fgcolor=\"black\"><tt>Period = Duration * |Gap| / "
+"Diameter * 10,000</tt></span>\n"
+"Example: For an 8 second animation with 16 px <u>Diameter</u> and 2 px "
+"<u>Gap</u> set <u>Period</u> = 10,000 units."
+msgstr ""
+
+msgid ""
+"\n"
+"Usage: PP [--config=config_file] [ option ] [ --show ]\n"
+"\n"
+"Options:\n"
+"PP -h | --help | --help-gui\n"
+"PP --export[=config_file]\n"
+"PP --export[=config_file['|'preset_name]]    Export presets as shell "
+"commands\n"
+"PP --load    Load the default preset\n"
+"PP --load=[config_file'|']preset_name    Load a named preset\n"
+"PP --save[=config_file['|'preset_name]] values...    Save ordered values\n"
+"PP --show    Show the currently loaded preset or the form values if the GUI "
+"is active\n"
+"PP --show values...    Show a pointer tracker for values\n"
+"PP --show=preset_group    Show all the presets in preset_group ::= "
+"preset_name[';'preset_name...]\n"
+"PP --stop    Stop all pointer trackers\n"
+"\n"
+"All options but --load exit.  This allows loading and starting a specific "
+"preset:\n"
+"»  PP --load=... --show   # this loads and shows a named preset then exits\n"
+"»  PP --load --show       # ditto the default preset\n"
+"whereas PP --load=... without --show continues on to display the GUI with "
+"the loaded preset selected.\n"
+msgstr ""
+#. Notes for translators:
+#. 1. Apparently the standard xgettext utility doesn't know how to extract
+#.    strings from calls to 'gettext -es'. Therefore the .pot template was
+#.    generated using
+#.    https://github.com/step-/scripts-to-go/blob/master/fatdog-wireless-antenna/usr/share/doc/fatdog-wireless-antenna/xgettext.sh
+#. 2. From this point on:
+#.    A. Never use \n **inside** a msgstr. For yad and gtkdialog you can replace
+#.    \n with \r.
+#.    B. However, always **end** your msgstr with \n.
+#.    C. Replace trailing spaces (hex 20) with non-breaking spaces (hex A0).
+#.
+#.  General
+#. Form: presets
+#. Form: option labels
+#. From: info tooltips
+#. Form: FBTN buttons
+#. Buttons (none)
+
+#. i18n_Win_title
+msgid "Pointer Pointer\n"
+msgstr ""
+
+#. i18n_Export_title
+msgid "Export\n"
+msgstr ""
+
+#. i18n_Help_title
+msgid "Help\n"
+msgstr ""
+
+#. i18n_Wrong_number_of_args
+msgid "Wrong number of arguments\n"
+msgstr ""
+
+#. i18n_About
+msgid "About\n"
+msgstr ""
+
+#. i18n_Version
+msgid "Version\n"
+msgstr ""
+
+#. i18n_Homepage
+msgid "Homepage\n"
+msgstr ""
+
+#. i18n_Credits
+msgid "Credits\n"
+msgstr ""
+
+#. i18n_pset_default
+msgid "Default\n"
+msgstr ""
+
+#. i18n_pset_2
+msgid "Ring\n"
+msgstr ""
+
+#. i18n_pset_3
+msgid "Outlined\n"
+msgstr ""
+
+#. i18n_pset_4
+msgid "Zoom in\n"
+msgstr ""
+
+#. i18n_pset_5
+msgid "Zoom out\n"
+msgstr ""
+
+#. i18n_pset_6
+msgid "Sticky bubble\n"
+msgstr ""
+
+#. i18n_pset_7
+msgid "red35\n"
+msgstr ""
+
+#. i18n_pset_8
+msgid "green40\n"
+msgstr ""
+
+#. i18n_pset_9
+msgid "blue45\n"
+msgstr ""
+
+#. i18n_pset_10
+msgid "red40\n"
+msgstr ""
+
+#. i18n_pset_11
+msgid "red45\n"
+msgstr ""
+
+#. i18n_pset_12
+msgid "yellow\n"
+msgstr ""
+
+#. i18n_opt_s
+msgid "Largest circle diameter in pixels\n"
+msgstr ""
+
+#. i18n_opt_d
+msgid "Distance between circles in pixels:\rNegative values shrink circles inwards.\n"
+msgstr ""
+
+#. i18n_opt_l
+msgid "Width of the pen that draws circles in pixels\n"
+msgstr ""
+
+#. i18n_opt_w
+msgid "Time units to wait before drawing the next circle in tenths of milliseconds\n"
+msgstr ""
+
+#. i18n_opt_c
+msgid "The circle color can be either an X11 color name or an RGB hex string\n"
+msgstr ""
+
+#. i18n_opt_S
+msgid "Symmetry 0 or 1 draws the circles in slightly different ways\n"
+msgstr ""
+
+#. i18n_opt_r
+msgid "How many times to repeat the animation; 0 plays forever\n"
+msgstr ""
+
+#. i18n_opt_f
+msgid "Attempt to follow the pointer as it moves.\n"
+msgstr ""
+
+#. i18n_opt_o
+msgid "Draw a thin outline in the opposite color to help visibility on mixed backgrounds.\n"
+msgstr ""
+
+#. i18n_opt_more
+msgid "Infrequently used options\rClick <u>Help</u> for more...\n"
+msgstr ""
+
+#. i18n_form_s
+msgid "Diameter\n"
+msgstr ""
+
+#. i18n_form_d
+msgid "Gap\n"
+msgstr ""
+
+#. i18n_form_l
+msgid "Pen width\n"
+msgstr ""
+
+#. i18n_form_w
+msgid "Period\n"
+msgstr ""
+
+#. i18n_form_c
+msgid "Color\n"
+msgstr ""
+
+#. i18n_form_S
+msgid "Symmetry\n"
+msgstr ""
+
+#. i18n_form_r
+msgid "Repeat\n"
+msgstr ""
+
+#. i18n_form_f
+msgid "Follow\n"
+msgstr ""
+
+#. i18n_form_o
+msgid "Outline\n"
+msgstr ""
+
+#. i18n_form_more
+msgid "More\n"
+msgstr ""
+
+#. i18n_Test
+msgid "_Test\n"
+msgstr ""
+
+#. i18n_Test_long
+msgid "Test current form values\n"
+msgstr ""
+
+#. i18n_Stop
+msgid "_Stop\n"
+msgstr ""
+
+#. i18n_Stop_long
+msgid "Stop all pointer trackers\n"
+msgstr ""
+
+#. i18n_Save
+msgid "S_ave\n"
+msgstr ""
+
+#. i18n_Save_long
+msgid "Save values to '%s'.\rType a name for this preset in the box below then click [Save]\n"
+msgstr ""
+
+#. i18n_Load
+msgid "_Load\n"
+msgstr ""
+
+#. i18n_Load_long
+msgid "Load the selected preset onto this form\n"
+msgstr ""
+
+#. i18n_Run
+msgid "_Run\n"
+msgstr ""
+
+#. i18n_Run_long
+msgid "⇖ Run the preset named above\n"
+msgstr ""
+
+#. i18n_Export
+msgid "_Export\n"
+msgstr ""
+
+#. i18n_Export_Long
+msgid "Export all presets as shell commands\n"
+msgstr ""
